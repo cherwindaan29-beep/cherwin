@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+
+  <!-- CSS CONNECTION -->
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+  <!-- HEADER + NAV -->
+  <header>
+    <nav class="navbar" id="myNavbar">
+
+      <a href="#home">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+
+      <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">☰</a>
+
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <h1 class="title">My Personal Portfolio</h1>
+
+    <!-- HOME / PROFILE -->
+    <section id="home" class="home-section">
+      <img src="{% static 'myphoto.jpg' %}" alt="Profile Picture" class="profile-pic">
+      <h2>Cherwin Daan</h2>
+      <p><b>Web Developer</b></p>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about-section">
+      <h2>About</h2>
+        <p> Hello! I’m Cherwin Daan, an aspiring web developer who enjoys building simple, clean, and responsive websites. I am currently learning and improving my skills in HTML, CSS, and JavaScript to create better user experiences.
+        I like turning ideas into real web projects and I’m always willing to learn new things in web development. My goal is to grow as a developer and build projects that are both useful and visually appealing.  </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="skills-section">
+      <h2>Skills</h2>
+      <ul class="skills">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
+     <div id="contact"class="contact-section">
+      <h2>Contact</h2>
+
+      <form method="POST">
+        {% csrf_token %}
+      
+
+        <input type="text" name="name" placeholder="Your Name" required><br><br>
+
+        <input type="email" name="email" placeholder="Your Email" required><br><br>
+
+        <textarea name="message" placeholder="Your Message" required></textarea><br><br>
+
+        <button type="submit">Send</button>
+      
+       
+       </form>
+    </div>
+       <h2>Messages</h2>
+
+{% for c in contacts %}
+  <div class="card">
+    <p><b>{{ c.name }}</b></p>
+    <p>{{ c.email }}</p>
+    <p>{{ c.message }}</p>
+
+    <a href="/edit/{{ c.id }}">Edit</a>
+    <a href="/delete/{{ c.id }}">Delete</a>
+  </div>
+{% empty %}
+  <p>No messages yet.</p>
+{% endfor %}
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <p>My Portfolio</p>
+  </footer>
+
+  <!-- JS CONNECTION -->
+  <script src="{% static 'script.js' %}"></script>
+
+</body>
+</html>
+

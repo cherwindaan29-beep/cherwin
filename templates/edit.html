@@ -1,0 +1,13 @@
+<h2>Edit Contact</h2>
+
+<form method="POST">
+  {% csrf_token %}
+
+  <input type="text" name="name" value="{{ contact.name }}" required><br><br>
+
+  <input type="email" name="email" value="{{ contact.email }}" required><br><br>
+
+  <textarea name="message" required>{{ contact.message }}</textarea><br><br>
+
+  <button type="submit">Update</button>
+</form>

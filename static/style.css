@@ -1,0 +1,143 @@
+/* HEADER + NAV */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+}
+
+.navbar a {
+  float: right;
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+/* MAIN CONTENT */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: gray;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+}
+
+/* HOME / PROFILE */
+.home-section {
+  text-align: center;
+  padding: 20px;
+  margin: 20px 0;
+  background: brown;
+  border-radius: 10px;
+}
+
+.profile-pic {
+  width: 150px;
+  border-radius: 50%;
+  border: 3px solid black;
+}
+
+/* ABOUT */
+.about-section {
+  padding: 20px;
+  margin: 20px 0;
+  background: brown;
+  border-radius: 10px;
+}
+
+/* SKILLS */
+.skills-section {
+  padding: 20px;
+  margin: 20px 0;
+  background: brown;
+  border-radius: 10px;
+}
+
+.skills-section ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.skills-section li {
+  background: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.skills-section li:hover {
+  background: red;
+  color: white;
+}
+
+/* CONTACT */
+.contact-section {
+  padding: 20px;
+  margin: 20px 0;
+  background: brown;
+  border-radius: 10px;
+}
+
+/* FIXED INPUT SIZE */
+.contact-section input,
+.contact-section textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+
+/* FOOTER */
+#footer {
+  text-align: center;
+  padding: 15px;
+  background: lightblue;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .navbar a {
+    display: none;
+    float: none;
+    width: 100%;
+    text-align: left;
+  }
+
+  .navbar a.icon {
+    display: block;
+    float: right;
+  }
+
+  .navbar.responsive a {
+    display: block;
+  }
+
+  .container {
+    padding: 10px;
+  }
+}
