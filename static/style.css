@@ -93,6 +93,17 @@ body {
   color: white;
 }
 
+/* CODE OUTPUT */
+.code-output {
+  margin-top: 20px;
+  background: white;
+  color: lime;
+  padding: 15px;
+  border-radius: 10px;
+  font-family: monospace;
+  white-space: pre-line;
+}
+
 /* CONTACT */
 .contact-section {
   padding: 20px;
